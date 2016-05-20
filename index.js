@@ -13,7 +13,7 @@ module.exports = function createElegantStatus (text) {
 
     animation.unref();
 
-    return function done (success) {
+    function done (success) {
         var status = success ?
                      chalk.green(OS.win ? '√' : '✓') :
                      chalk.red(OS.win ? '×' : '✖');
@@ -21,5 +21,11 @@ module.exports = function createElegantStatus (text) {
         clearInterval(animation);
         logUpdate(status + ' ' + text);
         console.log();
+    }
+
+    done.updateText = function (newText) {
+        text = newText;
     };
+
+    return done;
 };
