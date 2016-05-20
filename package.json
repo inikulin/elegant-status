@@ -1,10 +1,12 @@
 {
   "name": "elegant-status",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Create elegant task status for CLI.",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js && node playground.js"
+    "test": "eslint index.js && node playground.js",
+    "publish-please": "publish-please",
+    "prepublish": "publish-please guard"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
     "os-family": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^1.10.3"
+    "eslint": "^1.10.3",
+    "publish-please": "^2.1.1"
   }
 }
